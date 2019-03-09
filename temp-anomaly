@@ -1,12 +1,10 @@
-# program.py
-# Raunak Anand and Diya Shenoy
-# ECS32A Fall 2018
-# 1 November 2018
+# temp-anomaly.py
+# Raunak Anand
 # Our program will calculate a moving average of the temperature anomaly data for Sacramento
 
 filename = input("Temperature anomaly filename:") # asking user to input filename
-if filename == "Sacramento-1880-2018.NOAA.csv": # if and else statement
-    infile = open("Sacramento-1880-2018.NOAA.csv", "r") # information input from Sacramento-1880-2018.NOAA.csv
+if filename == "Sacramento-1880-2018.NOAA.webarchive": # if and else statement
+    infile = open("Sacramento-1880-2018.NOAA.webarchive", "r") # information input from Sacramento-1880-2018.NOAA.csv
     outfile= open("tempAnomaly.txt","w") # data output to tempAnomaly.txt
     outfile.write("Year\tValue\n") # print("Year", "\t", "Value")
     for i in range(5):
@@ -35,7 +33,7 @@ if filename == "Sacramento-1880-2018.NOAA.csv": # if and else statement
         outfile.write(TA[0] + '\t' + average + '\n')
         cnt = cnt + 1
 
-    infile.close() # close .csv file 
+    infile.close() # close .webarchive file 
     outfile.close() # close .txt file
 else:
     print("The file",filename,"could not be opened.")
